@@ -1,11 +1,13 @@
 package morgorithm.leet.easy.longestcommonprefix
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 class SolutionTest extends Specification {
 
 
-    def "longest common prefix"() {
+    @Unroll
+    def "longest common prefix #IN --> #OUT"() {
 
         given:
         Solution solution = new Solution()
