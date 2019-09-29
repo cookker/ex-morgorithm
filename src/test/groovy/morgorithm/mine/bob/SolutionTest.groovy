@@ -11,10 +11,16 @@ class SolutionTest extends Specification {
         Solution solution = new Solution()
 
         expect:
-        OUT == solution.bob(N)
+        OUT == solution.bob(TOTAL, N)
 
         where:
-        N  || OUT
-        10 || [4, 3, 3]
+        TOTAL | N || OUT
+        10    | 2 || [5, 5]
+        10    | 1 || [10]
+        10    | 3 || [4, 3, 3]
+        10    | 4 || [3, 3, 2, 2]
+        13    | 2 || [7, 6]
+        13    | 3 || [5, 4, 4]
+        13    | 4 || [4, 3, 3, 3]
     }
 }

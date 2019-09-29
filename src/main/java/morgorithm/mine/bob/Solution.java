@@ -9,7 +9,20 @@ package morgorithm.mine.bob;
 * */
 public class Solution {
 
-    public int [] bob(int n){
-        return new int[]{0,0,0};
+    public int [] bob(int total, int groupCount){
+
+        int[] bobjo = new int[groupCount];
+        int totalCount = 0;
+
+        for(int i = 0 ; i < groupCount ; i ++){
+            bobjo[i] = total / groupCount;
+            totalCount += total / groupCount;
+        }
+
+        for(int i = 0 ; i < total - totalCount ; i++){
+            bobjo[i]++;
+        }
+
+        return bobjo;
     }
 }
