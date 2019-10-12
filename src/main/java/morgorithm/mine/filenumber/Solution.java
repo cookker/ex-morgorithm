@@ -52,7 +52,7 @@ public class Solution {
         public FileNameStructure(String str){
             final String[] strings = splitExtension(str);
             fileName = strings[0];
-            extension = strings[1];
+            extension = strings.length == 2 ? strings[1] : "";
             number = fileName.replaceAll("[^\\([0-9]*\\)]", "");
             number = number.replaceAll("[\\(|\\)]", "");
 //            number = fileName.replaceAll("[\\([a-z][A-Z]*\\)]", "");
@@ -64,7 +64,11 @@ public class Solution {
         }
 
         public String fullFileName(){
-            return getOnlyFileName() + getNumber() +"." + extension;
+            return getOnlyFileName() + getNumber() + getExtension();
+        }
+
+        private String getExtension(){
+            return "".equals(extension) ? "" : "." + extension;
         }
 
         private String getOnlyFileName(){

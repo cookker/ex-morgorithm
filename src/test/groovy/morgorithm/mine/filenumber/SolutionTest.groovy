@@ -23,6 +23,7 @@ class SolutionTest extends Specification {
         ["filename(100).txt", "filename(100).txt"]       || ["filename(101).txt"]
         ["filename(a).txt", "filename(a).txt"]           || ["filename(a)(1).txt"]
         ["filename(a).txt", "filename(b).txt"]           || ["filename(a).txt", "filename(b).txt"]
+        ["filename", "filename"]                         || ["filename(1)"]
 //        ["filename(0).txt", "filename(0).txt"] || ["filename(0)(1).txt"]
     }
 }
